@@ -33,13 +33,16 @@ final class HomeViewController: UIViewController {
         self.title = "Payment methods"
         view.backgroundColor = .white
         tableView.backgroundColor = UIColor.white
-        tableView.separatorStyle = .none
+        tableView.separatorStyle = .singleLine
         //tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.layer.borderWidth = 1
         tableView.layer.borderColor = UIColor.lightGray.cgColor
         tableView.showsVerticalScrollIndicator = true
+        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60.0
         let topConstraintTable = tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30.0 )
         let bottomConstraintTable = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30.0)
         let leadingConstraintTable = tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15.0)
@@ -100,9 +103,10 @@ extension HomeViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell else { return UITableViewCell()}
         presenter.configureCell(cell, indexPath.row)
         return cell
     }
+    
 }
 

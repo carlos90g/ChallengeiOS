@@ -10,7 +10,6 @@ import XCTest
 
 class ChallengeiOSTests: XCTestCase {
     
-    let view = HomeViewController()
     let mockPresenter = MockHomePresenter()
     
     

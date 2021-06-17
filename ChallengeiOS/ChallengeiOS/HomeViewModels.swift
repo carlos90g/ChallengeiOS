@@ -12,6 +12,7 @@
 //   let payments = try? newJSONDecoder().decode(Payments.self, from: jsonData)
 
 import Foundation
+import UIKit
 
 // MARK: - Payments
 struct Payments: Codable {
@@ -151,4 +152,44 @@ struct StringErrors {
     static let emptyData = "Invalid response Data (empty)."
     static let parsingError = "An error occurrred parsing the response."
     static let urlError = "An error occurred formatting the fetch URL."
+}
+
+
+typealias ImageCacheLoaderCompletionHandler = ((UIImage) -> ())
+
+class ImageCacheLoader {
+    
+    var session: URLSession!
+    var cache: NSCache<NSString, UIImage>!
+    
+    init() {
+        session = URLSession.shared
+        self.cache = NSCache()
+    }
+    
+    func obtainImageWithPath(imagePath: String, completionHandler: @escaping ImageCacheLoaderCompletionHandler) {
+        if let image = self.cache.object(forKey: imagePath as NSString) {
+            DispatchQueue.main.async {
+                completionHandler(image)
+            }
+        } else {
+            /* You need placeholder image in your assets,
+               if you want to display a placeholder to user */
+            let placeholder = UIImage()
+            DispatchQueue.main.async {
+                completionHandler(placeholder)
+            }
+            let url: URL! = URL(string: imagePath)
+            let task = session.downloadTask(with: url, completionHandler: { (location, response, error) in
+                if let data = try? Data(contentsOf: url) {
+                    let img: UIImage! = UIImage(data: data)
+                    self.cache.setObject(img, forKey: imagePath as NSString)
+                    DispatchQueue.main.async {
+                        completionHandler(img)
+                    }
+                }
+            })
+            task.resume()
+        }
+    }
 }

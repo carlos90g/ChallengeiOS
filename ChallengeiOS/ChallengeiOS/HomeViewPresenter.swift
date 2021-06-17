@@ -12,7 +12,7 @@ import UIKit
 protocol HomeViewPresenterProtocol {
     func getAPIPaymentsData()
     func getPaymentsCount() -> Int
-    func configureCell(_ cell: UITableViewCell, _ index: Int)
+    func configureCell(_ cell: HomeTableViewCell, _ index: Int)
 }
 
 class HomeViewPresenter {
@@ -32,9 +32,14 @@ class HomeViewPresenter {
 
 extension  HomeViewPresenter : HomeViewPresenterProtocol {
     
-    func configureCell(_ cell: UITableViewCell, _ index: Int) {
+    func configureCell(_ cell: HomeTableViewCell, _ index: Int) {
         let item = payments?.networks.applicable[index]
-        cell.textLabel?.text = item?.label
+        cell.paymentsTitleLabel.text = item?.label
+        cell.imgView.contentMode = .scaleAspectFit
+        ImageCacheLoader().obtainImageWithPath(imagePath: item?.links.logo ?? "") { (image) in
+                // Before assigning the image, check whether the current cell is visible
+                cell.imgView.image = image
+            }
     }
     
     func getPaymentsCount() -> Int {
