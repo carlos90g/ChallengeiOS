@@ -27,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         navigationController.navigationBar.isHidden = false
+        navigationController.navigationBar.barStyle = .black
+        navigationController.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.4941176471, blue: 0.2352941176, alpha: 1) 
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+
     }
     
 

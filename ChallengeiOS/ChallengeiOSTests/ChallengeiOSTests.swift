@@ -9,25 +9,35 @@ import XCTest
 @testable import ChallengeiOS
 
 class ChallengeiOSTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    let view = HomeViewController()
+    let mockPresenter = MockHomePresenter()
+    
+    
+    override func setUp() {
+        
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testSuccessfullPayments (){
+        let expectation = self.expectation(description: "completed")
+        expectation.isInverted = true
+        mockPresenter.service.currentResult = mockPresenter.service.resultSuccess
+        mockPresenter.getAPIPaymentsData()
+        waitForExpectations(timeout: 2.0, handler: { (error) in
+            expectation.fulfill()
+        })
+        XCTAssertTrue(mockPresenter.getPaymentsCount() == 3, "")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testErrorPayments (){
+        let expectation = self.expectation(description: "completed")
+        expectation.isInverted = true
+        mockPresenter.service.currentResult = mockPresenter.service.resultError
+        mockPresenter.getAPIPaymentsData()
+        waitForExpectations(timeout: 2.0, handler: { (error) in
+            expectation.fulfill()
+        })
+        XCTAssertTrue(mockPresenter.getPaymentsCount() == 0, "")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }

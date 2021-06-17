@@ -1,0 +1,161 @@
+{
+    "links": {
+        "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it",
+        "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/checkout.json"
+    },
+    "timestamp": "2021-04-14T09:16:46.796+0000",
+    "operation": "LIST",
+    "resultCode": "00000.11.000",
+    "resultInfo": "17 applicable and 0 registered networks are found",
+    "returnCode": {
+        "name": "OK",
+        "source": "GATEWAY"
+    },
+    "status": {
+        "code": "listed",
+        "reason": "listed"
+    },
+    "interaction": {
+        "code": "PROCEED",
+        "reason": "OK"
+    },
+    "identification": {
+        "longId": "6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it",
+        "shortId": "05753-51161",
+        "transactionId": "20678"
+    },
+    "networks": {
+        "applicable": [
+            {
+                "code": "AMEX",
+                "label": "American Express",
+                "method": "CREDIT_CARD",
+                "grouping": "CREDIT_CARD",
+                "registration": "OPTIONAL",
+                "recurrence": "NONE",
+                "redirect": false,
+                "links": {
+                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/amex.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/AMEX",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/AMEX.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/AMEX/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/AMEX/standard/validate"
+                },
+                "selected": false,
+                "inputElements": [
+                    {
+                        "name": "number",
+                        "type": "numeric"
+                    },
+                    {
+                        "name": "expiryMonth",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "expiryYear",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "verificationCode",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "holderName",
+                        "type": "string"
+                    }
+                ],
+                "operationType": "CHARGE"
+            },
+            {
+                "code": "DINERS",
+                "label": "Diners Club",
+                "method": "CREDIT_CARD",
+                "grouping": "CREDIT_CARD",
+                "registration": "OPTIONAL",
+                "recurrence": "NONE",
+                "redirect": false,
+                "links": {
+                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/diners.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DINERS",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/DINERS.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DINERS/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/DINERS/standard/validate"
+                },
+                "selected": false,
+                "inputElements": [
+                    {
+                        "name": "number",
+                        "type": "numeric"
+                    },
+                    {
+                        "name": "expiryMonth",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "expiryYear",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "verificationCode",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "holderName",
+                        "type": "string"
+                    }
+                ],
+                "operationType": "CHARGE"
+            },
+            {
+                "code": "DISCOVER",
+                "label": "Discover",
+                "method": "CREDIT_CARD",
+                "grouping": "CREDIT_CARD",
+                "registration": "OPTIONAL",
+                "recurrence": "NONE",
+                "redirect": false,
+                "links": {
+                    "logo": "https://raw.githubusercontent.com/optile/checkout-android/develop/checkout/src/main/assets/networklogos/discover.png",
+                    "self": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DISCOVER",
+                    "lang": "https://resources.integration.oscato.com/resource/lang/MOBILETEAM/en_US/DISCOVER.json",
+                    "operation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/DISCOVER/charge",
+                    "validation": "https://api.integration.oscato.com/pci/v1/6076b2feabe8170009d56de4l7ab1tlvai852jekk4s2h2b7it/MOBILETEAM/en_US/DISCOVER/standard/validate"
+                },
+                "selected": false,
+                "inputElements": [
+                    {
+                        "name": "number",
+                        "type": "numeric"
+                    },
+                    {
+                        "name": "expiryMonth",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "expiryYear",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "verificationCode",
+                        "type": "integer"
+                    },
+                    {
+                        "name": "holderName",
+                        "type": "string"
+                    }
+                ],
+                "operationType": "CHARGE"
+            }
+        ]
+    },
+    "operationType": "CHARGE",
+    "style": {
+        "language": "en_US"
+    },
+    "payment": {
+        "reference": "Mobile Team Exercise",
+        "amount": 13,
+        "currency": "EUR"
+    },
+    "integrationType": "MOBILE_NATIVE"
+}

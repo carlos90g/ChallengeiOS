@@ -13,6 +13,12 @@
 		DEBC6629267A3BFB00E03ED0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6627267A3BFB00E03ED0 /* LaunchScreen.storyboard */; };
 		DEBC6634267A3BFC00E03ED0 /* ChallengeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6633267A3BFC00E03ED0 /* ChallengeiOSTests.swift */; };
 		DEBC663F267A3BFC00E03ED0 /* ChallengeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC663E267A3BFC00E03ED0 /* ChallengeiOSUITests.swift */; };
+		DEBC665C267A3EFA00E03ED0 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC665B267A3EF900E03ED0 /* HomeService.swift */; };
+		DEBC6661267A434D00E03ED0 /* HomeViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6660267A434D00E03ED0 /* HomeViewModels.swift */; };
+		DEBC6669267A6AD100E03ED0 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6668267A6AD100E03ED0 /* HomeViewPresenter.swift */; };
+		DEBC667A267AF5B600E03ED0 /* MockHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC6679267AF5B600E03ED0 /* MockHomeService.swift */; };
+		DEBC6685267AFB7A00E03ED0 /* payments.json in Resources */ = {isa = PBXBuildFile; fileRef = DEBC6684267AFB7A00E03ED0 /* payments.json */; };
+		DEBC668D267B047300E03ED0 /* MockHomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC668C267B047300E03ED0 /* MockHomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		DEBC663A267A3BFC00E03ED0 /* ChallengeiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEBC663E267A3BFC00E03ED0 /* ChallengeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeiOSUITests.swift; sourceTree = "<group>"; };
 		DEBC6640267A3BFC00E03ED0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEBC665B267A3EF900E03ED0 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		DEBC6660267A434D00E03ED0 /* HomeViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModels.swift; sourceTree = "<group>"; };
+		DEBC6668267A6AD100E03ED0 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		DEBC6679267AF5B600E03ED0 /* MockHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeService.swift; sourceTree = "<group>"; };
+		DEBC6684267AFB7A00E03ED0 /* payments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = payments.json; sourceTree = "<group>"; };
+		DEBC668C267B047300E03ED0 /* MockHomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,9 @@
 			children = (
 				DEBC661C267A3BF800E03ED0 /* AppDelegate.swift */,
 				DEBC6620267A3BF800E03ED0 /* HomeViewController.swift */,
+				DEBC665B267A3EF900E03ED0 /* HomeService.swift */,
+				DEBC6660267A434D00E03ED0 /* HomeViewModels.swift */,
+				DEBC6668267A6AD100E03ED0 /* HomeViewPresenter.swift */,
 				DEBC6625267A3BFB00E03ED0 /* Assets.xcassets */,
 				DEBC6627267A3BFB00E03ED0 /* LaunchScreen.storyboard */,
 				DEBC662A267A3BFB00E03ED0 /* Info.plist */,
@@ -107,7 +122,10 @@
 		DEBC6632267A3BFC00E03ED0 /* ChallengeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC6684267AFB7A00E03ED0 /* payments.json */,
 				DEBC6633267A3BFC00E03ED0 /* ChallengeiOSTests.swift */,
+				DEBC6679267AF5B600E03ED0 /* MockHomeService.swift */,
+				DEBC668C267B047300E03ED0 /* MockHomePresenter.swift */,
 				DEBC6635267A3BFC00E03ED0 /* Info.plist */,
 			);
 			path = ChallengeiOSTests;
@@ -186,6 +204,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				ORGANIZATIONNAME = "Carlos Garcia";
 				TargetAttributes = {
 					DEBC6618267A3BF800E03ED0 = {
 						CreatedOnToolsVersion = 12.4;
@@ -234,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBC6685267AFB7A00E03ED0 /* payments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +273,9 @@
 			files = (
 				DEBC6621267A3BF800E03ED0 /* HomeViewController.swift in Sources */,
 				DEBC661D267A3BF800E03ED0 /* AppDelegate.swift in Sources */,
+				DEBC665C267A3EFA00E03ED0 /* HomeService.swift in Sources */,
+				DEBC6661267A434D00E03ED0 /* HomeViewModels.swift in Sources */,
+				DEBC6669267A6AD100E03ED0 /* HomeViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEBC667A267AF5B600E03ED0 /* MockHomeService.swift in Sources */,
+				DEBC668D267B047300E03ED0 /* MockHomePresenter.swift in Sources */,
 				DEBC6634267A3BFC00E03ED0 /* ChallengeiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
